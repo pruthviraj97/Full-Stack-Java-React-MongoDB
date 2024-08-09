@@ -12,12 +12,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/movies")
+@CrossOrigin(origins = "*")
 public class MovieController {
     @Autowired
     private MovieService movieService;
 
     @GetMapping
-    public ResponseEntity<List<Movie>> getwAllMovies() {
+    public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<>(movieService.allMovies(), HttpStatus.OK);
     }
 
